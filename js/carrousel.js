@@ -45,10 +45,22 @@
   function creer_radio_carrousel(index) {
     let carrousel__radio = document.createElement("input");
     // class
+    carrousel__radio.setAttribute("type", "radio");
     // index
-    // type
-    // name
-    // ajouter fans carrousel__form
+    carrousel__radio.setAttribute("name", "carrousel__radio");
+    //type
+    carrousel__radio.setAttribute("class", "carrousel__radio");
+    //name
+    carrousel__radio.setAttribute("data-index", index);
+    carrousel__radio.addEventListener("click", function () {
+      let images = document.querySelectorAll(".carrousel__image");
+      images.forEach(function (image) {
+        image.style.opacity = "0";
+      });
+      let selectedIndex = parseInt(this.getAttribute("data-index"));
+      images[selectedIndex].style.opacity = "1";
+    });
+    document.querySelector(".carrousel__form").appendChild(carrousel__radio);
   }
 
   /*
