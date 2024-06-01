@@ -48,12 +48,12 @@
     carrousel__radio.setAttribute("type", "radio");
     // index
     carrousel__radio.setAttribute("name", "carrousel__radio");
-    //type
+    // type
     carrousel__radio.setAttribute("class", "carrousel__radio");
-    //name
+    // data-index
     carrousel__radio.setAttribute("data-index", index);
     carrousel__radio.addEventListener("click", function () {
-      let images = document.querySelectorAll(".carrousel__image");
+      let images = document.querySelectorAll(".carrousel__img");
       images.forEach(function (image) {
         image.style.opacity = "0";
       });
@@ -69,7 +69,7 @@
     console.log("première image du carrousel = " + carrousel__img.src)
     carrousel__figure.appendChild(carrousel__img)
     console.log(carrousel__figure)
-*/
+  */
 
   /* écouteur pour ouvrir la boîte modale */
   bouton.addEventListener("mousedown", function () {
@@ -78,7 +78,6 @@
   /* Écouteur pour fermer la boîte modale */
   carrousel__x.addEventListener("mousedown", function () {
     carrousel.classList.remove("carrousel--ouvrir"); // fermer le carrousel
-
     console.log("fermer carrousel");
   });
 })();
